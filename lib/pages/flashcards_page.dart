@@ -10,7 +10,7 @@ import '../components/flashcards_page/card_1.dart';
 import '../components/flashcards_page/card_2.dart';
 
 class FlashcardsPage extends StatefulWidget {
-  const FlashcardsPage({Key? key}) : super(key: key);
+  const FlashcardsPage({super.key});
 
   @override
   State<FlashcardsPage> createState() => _FlashcardsPageState();
@@ -43,8 +43,8 @@ class _FlashcardsPageState extends State<FlashcardsPage> {
             child: CustomAppBar()),
         body: IgnorePointer(
           ignoring: notifier.ignoreTouches,
-          child: Stack(
-            children: const [
+          child: const Stack(
+            children: [
               Align(alignment: Alignment.bottomCenter, child: ProgressBar()),
               Card2(),
               Card1(),

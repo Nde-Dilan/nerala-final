@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_flashcards/configs/constants.dart';
+import 'package:flutter_flashcards/configs/palette.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final appTheme = ThemeData(
-    primaryColor: kRed,
+    primaryColor: Palette().green,
     textTheme: TextTheme(
-      bodyText2: TextStyle(
-          color: Colors.white,
+      bodyMedium: TextStyle(
+          color:Palette().trueWhite,
           fontSize: 15,
           fontFamily: GoogleFonts.notoSans().fontFamily),
-      headline1: TextStyle(
-        color: Colors.white,
+      displayLarge: TextStyle(
+        color:Palette().trueWhite,
         fontSize: 58,
         fontFamily: GoogleFonts.notoSans().fontFamily,
         fontWeight: FontWeight.bold,
@@ -24,45 +25,45 @@ final appTheme = ThemeData(
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
-      color: kRed,
+      color: Palette().green,
     ),
-    scaffoldBackgroundColor: kYellow,
+    scaffoldBackgroundColor: Palette().trueWhite,
     dialogTheme: DialogTheme(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(kCircularBorderRadius),
       ),
-      backgroundColor: kRed,
+      backgroundColor: Palette().green,
       contentTextStyle: TextStyle(
           fontFamily: GoogleFonts.notoSans().fontFamily,
           fontSize: 20,
-          color: Colors.white),
+          color:Palette().trueWhite),
       titleTextStyle: TextStyle(
           fontFamily: GoogleFonts.notoSans().fontFamily,
           fontSize: 20,
-          color: Colors.white),
+          color:Palette().trueWhite),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(kCircularBorderRadius),
-              side: const BorderSide(
-                color: Colors.white,
+              side:  BorderSide(
+                color:Palette().black,
               ),
             ),
-            primary: kYellow,
+            backgroundColor: Palette().trueWhite,
             textStyle: TextStyle(
               fontFamily: GoogleFonts.notoSans().fontFamily,
-              color: Colors.white,
+              color:Palette().black,
               fontSize: 12,
             ))),
-    progressIndicatorTheme: const ProgressIndicatorThemeData(
-      color: kRed,
+    progressIndicatorTheme:  ProgressIndicatorThemeData(
+      color: Palette().green,
       linearTrackColor: Colors.grey,
     ),
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.all<Color>(kRed),
+      thumbColor: MaterialStateProperty.all<Color>(Palette().green),
     ),
-    listTileTheme: const ListTileThemeData(
-      textColor: Colors.white,
-      iconColor: Colors.white,
+    listTileTheme:  ListTileThemeData(
+      textColor:Palette().trueWhite,
+      iconColor:Palette().trueWhite,
     ));

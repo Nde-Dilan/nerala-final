@@ -1,82 +1,185 @@
 import '../models/word.dart';
 
+const languageName = "Fuldé";
+const mainImage = 'assets/images/Nerala.png';
+
 //TODO insert below data into an SQLite database instead
 
-final List<Word> words = [
+final List<Word> tongaWords = [
+  Word(topic: "Animal", english: "Dog", pinyin: "mûgôüh", character: "mû-güoe"),
+  Word(topic: "Animal", english: "Cat", pinyin: "pùsi", character: "pu-ssi"),
+  Word(topic: "Nature", english: "Tree", pinyin: "Tcheü", character: "t-cheu"),
+  Word(
+      topic: "Nature",
+      english: "Rock",
+      pinyin: "ndügbâr",
+      character: "ndugbah"),
+  Word(
+      topic: "School",
+      english: "Bag",
+      pinyin: "bhôr-moüengni",
+      character: "bor-mueg-ni"),
+  Word(
+      topic: "School",
+      english: "Pen",
+      pinyin: "këût- moüengnî",
+      character: "keut-mueg-ni"),
+  Word(
+      topic: "Nature", english: "Rain", pinyin: "mbhëùn", character: "m-bheun"),
+  Word(
+      topic: "Transport",
+      english: "Moto-Bike",
+      pinyin: "bhâr",
+      character: "b-harr"),
+  Word(topic: "Nature", english: "Sun", pinyin: "gnëùm", character: "g-nem"),
+  Word(
+      topic: "Nature",
+      english: "Clouds",
+      pinyin: "khâr-mëgnëùm",
+      character: "kar-megnem"),
+  Word(
+      topic: "Family",
+      english: "Girl",
+      pinyin: "mù mjwi",
+      character: "mu-m-jwi"),
+  Word(topic: "Family", english: "Boy", pinyin: "mù mbé", character: "mu-m-be"),
+  Word(topic: "Family", english: "Baby", pinyin: "mûbwà", character: "mu-bua"),
+  Word(topic: "School", english: "Book", pinyin: "Kayè", character: "ka-ye"),
+  Word(
+      topic: "Transport",
+      english: "Airplane",
+      pinyin: "àvyçg",
+      character: "a-vieung"),
+  Word(topic: "Animal", english: "Egg", pinyin: "peùm", character: "peum"),
+  Word(
+      topic: "Family",
+      english: "Father",
+      pinyin: "Bàhbàh",
+      character: "bah-bah"),
+  Word(topic: "Animal", english: "Fish", pinyin: "bapgù", character: "bap-gue"),
+  Word(
+      topic: "Family",
+      english: "Oncle",
+      pinyin: "mûma mà yeu mbè",
+      character: "mu-ma-ma-ye-mbeu"),
+  Word(
+      topic: "Family",
+      english: "grand-child",
+      pinyin: "mû mù ye mjwi",
+      character: "mu-mu-ye-m-jwi"),
+  Word(topic: "Animal", english: "cock", pinyin: "ko'", character: "ko-o"),
+  Word(topic: "Animal", english: "Goat", pinyin: "dzéè", character: "dzeu"),
+  Word(
+      topic: "Transport",
+      english: "Train",
+      pinyin: "mèsig",
+      character: "me-sig"),
+];
 
-  Word(topic: "Beach", english: "Swimsuit", pinyin: "Yóu Yǒng Yī", character: "游泳衣"),
-  Word(topic: "Beach", english: "Seashell", pinyin: "Bèi Ké", character: "贝壳"),
-  Word(topic: "Beach", english: "Sunscreen", pinyin: "Fáng Shài Shuāng", character: "防晒霜"),
-  Word(topic: "Beach", english: "Surfboard", pinyin: "Chōng Làng Bǎn", character: "冲浪板"),
+final List<Word> words = [];
 
-  Word(topic: "Birds", english: "Kiwi", pinyin: "Qí Yì Niǎo", character: "奇异鸟"),
-  Word(topic: "Birds", english: "Duck", pinyin: "Yā Zi", character: "鸭子"),
-  Word(topic: "Birds", english: "Flamingo", pinyin: "Huǒ Liè Niǎo", character: "火烈鸟"),
-
-  Word(topic: "Body", english: "Nose", pinyin: "Bí Zi", character: "鼻子"),
-  Word(topic: "Body", english: "Eye", pinyin: "Yǎn Jīng", character: "眼睛"),
-  Word(topic: "Body", english: "Mouth", pinyin: "Zuǐ Ba", character: "嘴巴"),
-  Word(topic: "Body", english: "Ear", pinyin: "Ěr Duo", character: "耳朵"),
-
-  Word(topic: "City", english: "Hospital", pinyin: "Yī Yuàn", character: "医院"),
-  Word(topic: "City", english: "Fire Station", pinyin: "Xiāo Fáng jú", character: "消防局"),
-  Word(topic: "City", english: "Bank", pinyin: "Yín Háng", character: "银行"),
-
-  Word(topic: "Dessert", english: "Ice Cream", pinyin: "Bīng Qín Lín", character: "冰淇淋"),
-  Word(topic: "Dessert", english: "Chocolate", pinyin: "Qiǎo Kè Lì", character: "巧克力"),
-  Word(topic: "Dessert", english: "Donut", pinyin: "Tián Tián Quān", character: "甜甜圈"),
-
-  Word(topic: "Drinks", english: "Juice", pinyin: "Guǒ Zhī", character: "果汁"),
-  Word(topic: "Drinks", english: "Beer", pinyin: "Pí Jiǔ", character: "啤酒"),
-  Word(topic: "Drinks", english: "Milk", pinyin: "Niú Nǎi", character: "牛奶"),
-
-  Word(topic: "Fruit", english: "Apple", pinyin: "Píng Guǒ", character: "苹果"),
-  Word(topic: "Fruit", english: "Orange", pinyin: "Jú Zi", character: "橘子"),
-  Word(topic: "Fruit", english: "Banana", pinyin: "Xiāng Jiāo", character: "香蕉"),
-
-  Word(topic: "Insects", english: "Grasshopper", pinyin: "Zhà Měng", character: "蚱蜢"),
-  Word(topic: "Insects", english: "Fly", pinyin: "Cāng Yíng", character: "苍蝇"),
-  Word(topic: "Insects", english: "Spider", pinyin: "Zhī Zhū", character: "蜘蛛"),
-
-  Word(topic: "Jobs", english: "Police Officer", pinyin: "Jǐng Chá", character: "警察"),
-  Word(topic: "Jobs", english: "Construction Worker", pinyin: "Jiàn Zhú Gōng Rén", character: "建筑工人"),
-  Word(topic: "Jobs", english: "Detective", pinyin: "Zhēn Tàn", character: "侦探"),
-
-  Word(topic: "Land Animals", english: "Tiger", pinyin: "Lǎo Hǔ", character: "老虎"),
-  Word(topic: "Land Animals", english: "Bear", pinyin: "Xióng", character: "熊"),
-  Word(topic: "Land Animals", english: "Beaver", pinyin: "Hǎi Lí", character: "海狸"),
-  Word(topic: "Land Animals", english: "Camel", pinyin: "Luò Tuó", character: "骆驼"),
-  Word(topic: "Land Animals", english: "Dog", pinyin: "Gǒu", character: "狗"),
-
-  Word(topic: "Marine Life", english: "Dolphin", pinyin: "Hǎi Tún", character: "海豚"),
-  Word(topic: "Marine Life", english: "Shark", pinyin: "Shā Yú", character: "鲨鱼"),
-  Word(topic: "Marine Life", english: "Whale", pinyin: "Jīng Yú", character: "鲸鱼"),
-
-  Word(topic: "Music", english: "Piano", pinyin: "Gāng Qín", character: "钢琴"),
-  Word(topic: "Music", english: "Flute", pinyin: "Cháng Dí", character: "长笛"),
-
-  Word(topic: "Nature", english: "Tree", pinyin: "Shù", character: "树"),
-  Word(topic: "Nature", english: "Rock", pinyin: "Shí Tou", character: "石头"),
-
-  Word(topic: "School", english: "School Bag", pinyin: "Shū Bāo", character: "书包"),
-  Word(topic: "School", english: "Computer", pinyin: "Diànnǎo", character: "电脑"),
-  Word(topic: "School", english: "Pen", pinyin: "Bǐ", character: "笔"),
-
-  Word(topic: "Shapes", english: "Triangle", pinyin: "Sān Jiǎo Xíng", character: "三角形"),
-  Word(topic: "Shapes", english: "Circle", pinyin: "Yuán Xíng", character: "圆形"),
-  Word(topic: "Shapes", english: "Square", pinyin: "Zhèng Fāng Xíng", character: "正方形"),
-
-  Word(topic: "Sports", english: "Tennis", pinyin: "Wǎng Qiú", character: "网球"),
-  Word(topic: "Sports", english: "Rugby", pinyin: "Gǎn Lǎn Qiú", character: "橄榄球"),
-  Word(topic: "Sports", english: "Golf", pinyin: "Gāo'ěr Fū", character: "高尔夫"),
-
-  Word(topic: "Vehicles", english: "Motorbike", pinyin: "Mó Tuō Chē", character: "摩托车"),
-  Word(topic: "Vehicles", english: "Train", pinyin: "Huǒ Chē", character: "火车"),
-  Word(topic: "Vehicles", english: "Truck", pinyin: "Kǎ Chē", character: "卡车"),
-  Word(topic: "Vehicles", english: "Airplane", pinyin: "Fēi Jī", character: "飞机"),
-
-  Word(topic: "Weather", english: "Rain", pinyin: "Xià Yǔ", character: "下雨"),
-  Word(topic: "Weather", english: "Sun", pinyin: "Tài Yáng", character: "太阳"),
-  Word(topic: "Weather", english: "Cloud", pinyin: "Yún", character: "云"),
-
+final List<Word> fuldeWords = [
+  Word(topic: "Land Animals", english: "Dog", pinyin: "ngal", character: "gal"),
+  Word(
+      topic: "Land Animals",
+      english: "Bear",
+      pinyin: "kooluko",
+      character: "kou-lou-ko"),
+  Word(
+      topic: "Land Animals",
+      english: "Beaver",
+      pinyin: "baɗɗo",
+      character: "ba-d-do"),
+  Word(
+      topic: "Land Animals",
+      english: "Camel",
+      pinyin: "ngarma",
+      character: "ngar-ma"),
+  Word(
+      topic: "Marine Life",
+      english: "Dolphin",
+      pinyin: "dufu",
+      character: "dou-fou"),
+  Word(
+      topic: "Marine Life",
+      english: "Shark",
+      pinyin: "homa",
+      character: "ho-ma"),
+  Word(
+      topic: "Marine Life",
+      english: "Whale",
+      pinyin: "Jabɗal",
+      character: "Jah-bdal"),
+  Word(
+      topic: "Music",
+      english: "Piano",
+      pinyin: "Bindeekol",
+      character: "Bin-dey-kol"),
+  Word(
+      topic: "Music",
+      english: "Flute",
+      pinyin: "Rufeere",
+      character: "Roo-fay-ray"),
+  Word(
+      topic: "Nature", english: "Tree", pinyin: "Njoowi", character: "Nyo-wee"),
+  Word(topic: "Nature", english: "Rock", pinyin: "Daggi", character: "Da-gi"),
+  Word(
+      topic: "School",
+      english: "School Bag",
+      pinyin: "Kofnol",
+      character: "ˈkɔf.nɔl"),
+  Word(
+      topic: "School",
+      english: "Computer",
+      pinyin: "Kompita",
+      character: "ˈkɔm.pi.ta"),
+  Word(
+      topic: "School",
+      english: "Pen",
+      pinyin: "Ledduɓe",
+      character: "ˈlɛd.dʊ.ɓe"),
+  Word(
+      topic: "Shapes",
+      english: "Triangle",
+      pinyin: "Namru neɗɗi",
+      character: "ˈnam.ru ˈnɛɗ.ɗi"),
+  Word(
+      topic: "Shapes",
+      english: "Circle",
+      pinyin: "Laaɗi",
+      character: "ˈlaː.ɗi"),
+  Word(
+      topic: "Sports",
+      english: "Tennis",
+      pinyin: "Tenis",
+      character: "ˈtɛ.nis"),
+  Word(
+      topic: "Sports", english: "Rugby", pinyin: "Rugbi", character: "ˈrʊg.bi"),
+  Word(topic: "Sports", english: "Golf", pinyin: "Golfu", character: "ˈgɔl.fu"),
+  Word(
+      topic: "Vehicles",
+      english: "Motorbike",
+      pinyin: "Motto",
+      character: "ˈmɔt.to"),
+  Word(
+      topic: "Vehicles",
+      english: "Train",
+      pinyin: "lawol dilli",
+      character: "la-wol-dil-li"),
+  Word(
+      topic: "Vehicles",
+      english: "Truck",
+      pinyin: "ɲaambaajo",
+      character: "nyan-ba-jo"),
+  Word(
+      topic: "Weather",
+      english: "Rain",
+      pinyin: "iyeende",
+      character: "i-yen-dé"),
+  Word(topic: "Weather", english: "Sun", pinyin: "naange", character: "nan-gé"),
+  Word(
+      topic: "Weather",
+      english: "Cloud",
+      pinyin: "roulde",
+      character: "roul-dé"),
 ];

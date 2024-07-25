@@ -9,8 +9,7 @@ class HalfFlipAnimation extends StatefulWidget {
       required this.reset,
       required this.flipFromHalfWay,
       required this.animationCompleted,
-      Key? key})
-      : super(key: key);
+      super.key});
 
   final Widget child;
   final bool animate;

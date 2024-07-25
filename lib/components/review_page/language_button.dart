@@ -8,8 +8,8 @@ class LanguageButton extends StatelessWidget {
   const LanguageButton({
     required this.languageType,
     this.isDisabled = false,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final LanguageType languageType;
   final bool isDisabled;
@@ -21,7 +21,7 @@ class LanguageButton extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(6, 1, 6, 1),
       child: ElevatedButton(
           style:
-              ElevatedButton.styleFrom(primary: Theme.of(context).primaryColor),
+              ElevatedButton.styleFrom(backgroundColor: Theme.of(context).primaryColor),
           onPressed: isDisabled
               ? null
               : () {

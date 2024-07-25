@@ -12,7 +12,7 @@ import '../databases/database_manager.dart';
 import '../enums/settings.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
@@ -52,7 +52,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 children: [
                   SettingsTile(
                     title: 'Reset',
-                    icon: const Icon(Icons.refresh),
+                    icon: const Icon(Icons.refresh, color: Colors.black),
                     callback: () async {
                       notifier.resetSettings();
                       runQuickBox(context: context, text: 'Settings Reset');
@@ -65,7 +65,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   ),
                   SettingsTile(
                     title: 'Exit App',
-                    icon: const Icon(Icons.exit_to_app),
+                    icon: const Icon(Icons.exit_to_app, color: Colors.black),
                     callback: () {
                       SystemChannels.platform
                           .invokeMethod('SystemNavigator.pop');

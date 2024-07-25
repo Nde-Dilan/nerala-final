@@ -5,8 +5,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import '../../models/word.dart';
 
 class TTSButton extends StatefulWidget {
-  const TTSButton({Key? key, required this.word, this.iconSize = 50})
-      : super(key: key);
+  const TTSButton({super.key, required this.word, this.iconSize = 50});
 
   final Word word;
   final double iconSize;

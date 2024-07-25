@@ -12,8 +12,8 @@ import 'card_display.dart';
 
 class Card2 extends StatelessWidget {
   const Card2({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

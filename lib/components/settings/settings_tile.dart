@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_flashcards/configs/palette.dart';
 
 class SettingsTile extends StatelessWidget {
-  const SettingsTile({required this.title, required this.icon, required this.callback,
-    Key? key,
-  }) : super(key: key);
+  const SettingsTile({
+    required this.title,
+    required this.icon,
+    required this.callback,
+    super.key,
+  });
 
   final Icon icon;
   final String title;
@@ -19,7 +23,13 @@ class SettingsTile extends StatelessWidget {
         ),
         ListTile(
           leading: icon,
-          title: Text(title),
+          title: Text(
+            title,
+            style: TextStyle(
+                color: Palette().black,
+                fontWeight: FontWeight.bold,
+                fontSize: 16),
+          ),
           onTap: callback,
         ),
       ],

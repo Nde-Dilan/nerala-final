@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FadeInAnimation extends StatefulWidget {
-  const FadeInAnimation({required this.child, Key? key}) : super(key: key);
+  const FadeInAnimation({required this.child, super.key});
 
   final Widget child;
 

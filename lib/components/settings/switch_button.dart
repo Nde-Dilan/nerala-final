@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_flashcards/configs/palette.dart';
 import 'package:flutter_flashcards/utils/methods.dart';
 import 'package:provider/provider.dart';
 
@@ -9,8 +10,8 @@ class SwitchButton extends StatelessWidget {
   const SwitchButton({
     required this.displayOption,
     this.disabled = false,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Settings displayOption;
   final bool disabled;
@@ -25,7 +26,13 @@ class SwitchButton extends StatelessWidget {
               tileColor: disabled
                   ? Colors.black.withOpacity(0.10)
                   : Colors.transparent,
-              title: Text(displayOption.toText()),
+              title: Text(
+                displayOption.toText(),
+                style: TextStyle(
+                    color: Palette().black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
+              ),
               value: notifier.displayOptions.entries
                   .firstWhere((element) => element.key == displayOption)
                   .value,

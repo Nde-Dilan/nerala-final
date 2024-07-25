@@ -5,8 +5,8 @@ class HeaderButton extends StatelessWidget {
     required this.title,
     required this.onPressed,
     this.isDisabled = false,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String title;
   final VoidCallback onPressed;
@@ -20,7 +20,7 @@ class HeaderButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: isDisabled ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          primary: Theme.of(context).primaryColor,
+          backgroundColor: Theme.of(context).primaryColor,
         ),
         child: Text(title),
       ),

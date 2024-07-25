@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class QuickBox extends StatelessWidget {
-  const QuickBox({required this.text, Key? key}) : super(key: key);
+  const QuickBox({required this.text, super.key});
 
   final String text;
 

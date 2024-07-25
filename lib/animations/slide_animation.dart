@@ -11,8 +11,7 @@ class SlideAnimation extends StatefulWidget {
       this.reset,
       this.animationCompleted,
       this.animationDelay = 0,
-      Key? key})
-      : super(key: key);
+      super.key});
 
   final Widget child;
   final SlideDirection direction;

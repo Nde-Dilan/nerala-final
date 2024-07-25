@@ -9,8 +9,8 @@ import '../../enums/settings.dart';
 class CardDisplay extends StatelessWidget {
   const CardDisplay({
     required this.isCard1,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final bool isCard1;
 
@@ -101,7 +101,7 @@ Expanded buildTextBox(String text, BuildContext context, int flex) {
         child: FittedBox(
           child: Text(
             text,
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.displayLarge,
           ),
         ),
       ));

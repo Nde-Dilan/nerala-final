@@ -4,7 +4,7 @@ import 'package:flutter_flashcards/notifiers/flashcards_notifier.dart';
 import 'package:provider/provider.dart';
 
 class ProgressBar extends StatefulWidget {
-  const ProgressBar({Key? key}) : super(key: key);
+  const ProgressBar({super.key});
 
   @override
   State<ProgressBar> createState() => _ProgressBarState();

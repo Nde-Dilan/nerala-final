@@ -11,8 +11,8 @@ class WordTile extends StatelessWidget {
     required this.animation,
     this.onPressed,
     required this.index,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Word word;
 

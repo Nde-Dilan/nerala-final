@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_flashcards/configs/palette.dart';
 import 'package:flutter_flashcards/databases/database_manager.dart';
 import 'package:flutter_flashcards/notifiers/flashcards_notifier.dart';
 import 'package:flutter_flashcards/pages/flashcards_page.dart';
@@ -7,7 +8,7 @@ import 'package:provider/provider.dart';
 import '../../pages/home_page.dart';
 
 class ResultsBox extends StatefulWidget {
-  const ResultsBox({Key? key}) : super(key: key);
+  const ResultsBox({super.key});
 
   @override
   State<ResultsBox> createState() => _ResultsBoxState();
@@ -29,7 +30,7 @@ class _ResultsBoxState extends State<ResultsBox> {
             title: Text(
               notifier.isSessionCompleted
                   ? 'Session Completed!'
-                  : 'Round Completed!',
+                  : 'Round Completed!🚀',
               textAlign: TextAlign.center,
             ),
             actions: [
@@ -65,6 +66,13 @@ class _ResultsBoxState extends State<ResultsBox> {
                       notifier.isSessionCompleted
                           ? const SizedBox()
                           : ElevatedButton(
+                              style: TextButton.styleFrom(
+                                  backgroundColor: Palette().green,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),
+                                    side:
+                                        BorderSide(color: Palette().trueWhite),
+                                  )),
                               onPressed: () {
                                 Navigator.pushReplacement(
                                   context,
@@ -74,10 +82,21 @@ class _ResultsBoxState extends State<ResultsBox> {
                                   ),
                                 );
                               },
-                              child: const Text('Retest Incorrect Cards')),
+                              child: Text(
+                                'Retest Incorrect Cards',
+                                style: TextStyle(
+                                    color: Palette().trueWhite,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              )),
                       notifier.isSessionCompleted
                           ? const SizedBox()
                           : ElevatedButton(
+                              style: TextButton.styleFrom(
+                                  backgroundColor: Palette().black,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),
+                                  )),
                               onPressed: _haveSavedCards
                                   ? null
                                   : () async {
@@ -88,17 +107,31 @@ class _ResultsBoxState extends State<ResultsBox> {
                                             word: notifier.incorrectCards[i]);
                                       }
                                       _haveSavedCards = true;
+                                      if (!context.mounted) return;
                                       runQuickBox(
                                           context: context,
                                           text: 'Incorrect Cards Saved!');
-                                      Future.delayed(const Duration(milliseconds: 1000), () {
-                                        if(!mounted)return;
+                                      Future.delayed(
+                                          const Duration(milliseconds: 1000),
+                                          () {
+                                        if (!mounted) return;
                                         Navigator.maybePop(context);
                                       });
                                       setState(() {});
                                     },
-                              child: const Text('Save Incorrect Cards')),
-                      ElevatedButton(
+                              child: Text(
+                                'Save Incorrect Cards',
+                                style: TextStyle(
+                                    color: Palette().trueWhite,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              )),
+                      TextButton(
+                          style: TextButton.styleFrom(
+                              backgroundColor: Palette().red,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              )),
                           onPressed: () {
                             notifier.reset();
                             Navigator.pushAndRemoveUntil(
@@ -108,7 +141,11 @@ class _ResultsBoxState extends State<ResultsBox> {
                                 ),
                                 (route) => false);
                           },
-                          child: const Text('Home'))
+                          child: Text('Home',
+                              style: TextStyle(
+                                  color: Palette().trueWhite,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16)))
                     ],
                   ),
                 ),

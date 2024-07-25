@@ -12,14 +12,14 @@ import '../components/home_page/topic_tile.dart';
 import '../data/words.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> _topics = [];
+  final List<String> _topics = [];
 
   @override
   initState() {
@@ -71,8 +71,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const FadeInAnimation(
-                child: Text(
-              'Chinese Flashcards\n中文学习卡',
+                child: Text(languageName,
               textAlign: TextAlign.center,
             )),
             Column(
@@ -105,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                 background: Padding(
                   padding: EdgeInsets.all(size.width * 0.10),
                   child: FadeInAnimation(
-                      child: Image.asset('assets/images/Dragon.png')),
+                      child: Image.asset(mainImage)),
                 ),
               ),
             ),

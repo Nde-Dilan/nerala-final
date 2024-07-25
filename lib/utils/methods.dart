@@ -22,7 +22,7 @@ extension SettingsToText on Settings {
       case Settings.englishFirst:
         return 'Show English First';
       case Settings.showPinyin:
-        return 'Show Pinyin';
+        return 'Show Pronounciation';
       case Settings.audioOnly:
         return 'Test Listening';
     }
@@ -37,16 +37,16 @@ extension LanguageSymbol on LanguageType {
       case LanguageType.english:
         return 'Abc';
       case LanguageType.character:
-        return '汉字';
+        return 'Char';
       case LanguageType.pinyin:
-        return 'Pīn';
+        return 'Pron';
     }
   }
 }
 
 updatePreferencesOnRestart({required BuildContext context}) {
   final settingsNotifier =
-  Provider.of<SettingsNotifier>(context, listen: false);
+      Provider.of<SettingsNotifier>(context, listen: false);
 
   for (var e in settingsNotifier.displayOptions.entries) {
     SharedPreferences.getInstance().then((prefs) {
@@ -80,8 +80,7 @@ runGuideBox({required BuildContext context, required bool isFirst}) {
   Future.delayed(const Duration(milliseconds: 1200), () {
     showDialog(
         context: context,
-        builder: (context) =>
-            GuideBox(
+        builder: (context) => GuideBox(
               isFirst: isFirst,
             ));
   });

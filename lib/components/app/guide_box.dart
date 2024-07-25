@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_flashcards/animations/fade_in_animation.dart';
 
 class GuideBox extends StatelessWidget {
-  const GuideBox({required this.isFirst, Key? key}) : super(key: key);
+  const GuideBox({required this.isFirst, super.key});
 
   final bool isFirst;
 
@@ -28,9 +28,9 @@ class GuideBox extends StatelessWidget {
                 child: Image.asset('assets/images/GuideDoubleTap.png'),
               ))
             ] else ...[
-              Expanded(
+              const Expanded(
                 child: Row(
-                  children: const [
+                  children: [
                     GuideSwipe(
                       isLeft: true,
                     ),
@@ -65,8 +65,8 @@ class GuideBox extends StatelessWidget {
 class GuideSwipe extends StatelessWidget {
   const GuideSwipe({
     required this.isLeft,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final bool isLeft;
 
