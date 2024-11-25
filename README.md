@@ -4,6 +4,8 @@
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-blue.svg)](https://flutter.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![Nerala Application](https://via.placeholder.com/800x400?text=Nerala+Application+Preview)
+
 ## 📝 Description
 
 Nerala is a mobile application dedicated to preserving and revitalizing Cameroon's vernacular languages. Built with Flutter, it provides an interactive and engaging platform for learning local languages through various features including flashcards, stories, and cultural content.
@@ -25,6 +27,14 @@ Nerala is a mobile application dedicated to preserving and revitalizing Cameroon
     - Progress tracking
     - Multi-device compatibility
     - Offline support
+## 📱 Screenshots
+
+<div align="center">
+  <img src="https://via.placeholder.com/200x400?text=Login+Screen" alt="Login Screen" width="200"/>
+  <img src="https://via.placeholder.com/200x400?text=Home+Dashboard" alt="Patient Dashboard" width="200"/>
+  <img src="https://via.placeholder.com/200x400?text=Word+Learning" alt="Doctor Portal" width="200"/>
+  <img src="https://via.placeholder.com/200x400?text=Settings" alt="Appointments" width="200"/> 
+</div>
 
 ## 🚀 Getting Started
 
